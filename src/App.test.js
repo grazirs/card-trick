@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import DisplayDeck from "./components/DisplayDeck";
+import Deck from "./components/Deck";
 
 describe("<DisplayDeck />", () => {
   it("renders cards", () => {
-    render (<DisplayDeck />);
+    render (<Deck />);
     const cards = screen.getByTestId("cards")
     expect(cards).toBeInTheDocument();
   })

@@ -1,10 +1,10 @@
 import './App.css';
-import DisplayDeck from './components/DisplayDeck';
+import Deck from './components/Deck';
 
 function App() {
   return (
     <div className="App">
-      <DisplayDeck/>
+      <Deck/>
     </div>
   );
 }
