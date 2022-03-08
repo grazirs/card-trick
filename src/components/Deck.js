@@ -15,7 +15,6 @@ const trickDeck = shuffledDeck.slice(0, TOTAL_OF_CARDS);
 const Deck = () => {
   const [trickCards, setTrickCards] = useState(trickDeck);
   return(
-    <>
     <div className="cards" data-testid ="cards">
       {trickCards.map(({value, suit}) => {
         return (
@@ -23,7 +22,6 @@ const Deck = () => {
         )
       })}
     </div>
-    </>
   )
 }
 export default Deck;
