@@ -1,7 +1,7 @@
 import { useState } from "react";
 const VALUES= [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 const SUITS = ["♥", "♠", "♦", "♣"];
-const TOTAL_OF_CARDS = 22;
+const TOTAL_OF_CARDS = 21;
 
 const buildDeck = () => {
   return (VALUES.flatMap((value) => SUITS.map(suit => ({ value: value, suit: suit})))
@@ -10,10 +10,9 @@ const buildDeck = () => {
 let deck = buildDeck();
 
 const shuffledDeck = [...deck].sort(() => Math.random() - 0.5);
-const trickDeck = shuffledDeck.slice(0, TOTAL_OF_CARDS);
-const firstColumn = trickDeck.slice(0, 7);
-const secondColumn = trickDeck.slice(8, 15);
-const thirdColumn = trickDeck.slice(15, TOTAL_OF_CARDS);
+const firstColumn = shuffledDeck.slice(0, 7);
+const secondColumn = shuffledDeck.slice(8, 15);
+const thirdColumn = shuffledDeck.slice(15, TOTAL_OF_CARDS+1);
 
 const Deck = () => {
   return(
