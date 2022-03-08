@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import DisplayDeck from "./components/DisplayDeck";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("<DisplayDeck />", () => {
+  it("renders cards", () => {
+    render (<DisplayDeck />);
+    const cards = screen.getByTestId("cards")
+    expect(cards).toBeInTheDocument();
+  })
 });

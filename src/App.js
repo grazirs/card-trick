@@ -1,11 +1,10 @@
 import './App.css';
+import DisplayDeck from './components/DisplayDeck';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello Hello</h1>
-      </header>
+      <DisplayDeck/>
     </div>
   );
 }

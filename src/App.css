@@ -1,1 +1,69 @@
+:root {
+  --margin-16: 16px;
+  --margin-32: 32px;
+  --padding-60: 60px;
+  --font-18: 18px;
+  --font-50: 50px;
 
+  --dark-red: #cc0000;
+  --black: #111111;
+  --white: #ffffff;
+  --font-nunito: 'Nunito', sans-serif;
+  --font-serif: 'Source Serif Pro', serif;
+}
+
+.cards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  height: 140px;
+  width: 130px;
+  margin: var(--margin-16);
+  border: solid 2px;
+  border-radius: 8px;
+  font-size: var(--font-50);
+  padding-top: var(--padding-60);
+  background-color: var(--white);
+  letter-spacing: 8px;
+  box-shadow:  2px 2px 4px var(--black);
+  cursor: pointer;
+  font-family: var(--font-serif);
+}
+
+.card--♥, .card--♦{
+  color: var(--dark-red);
+}
+
+.card:hover{
+  transition: all 1s;
+  transform: scale(1.1);
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: var(--margin-16);
+}
+
+.buttons__button{
+  width: 180px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: var(--normal-font-size);
+  background-color: var(--black);
+  letter-spacing: var(--letter-spacing);
+  cursor: pointer;
+}
+
+.buttons__button:hover{
+  border: solid 2px var(--white);
+}
