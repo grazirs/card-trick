@@ -10,7 +10,7 @@ const randomizeArray = (array) => [...array].sort(() => Math.random() - 0.5);
 
 let deck = VALUES.flatMap((value)  => SUITS.map((suit, index) =>({value: value, suit: suit, className: CLASSES[index]})));
 
-let trickDeck = randomizeArray(deck).slice(0, TOTAL_OF_CARDS);
+export let trickDeck = randomizeArray(deck).slice(0, TOTAL_OF_CARDS);
 
 const Deck = () => {
   const [step, setStep] = useState(0);
@@ -31,7 +31,8 @@ const Deck = () => {
     } else {
       cards = [...columns[1], ...columns[2], ...columns[0]];
     }
-  const result = [[], [], []];
+    
+    const result = [[], [], []];
     cards.forEach((card, index) => {
       if (index % 3 === 1) result[1].push(card);
       else if (index % 3 === 2) result[2].push(card);
@@ -59,10 +60,10 @@ const Deck = () => {
     <button className="buttons__button" onClick={() => selectColum(0)}>Column 1</button>
     <button className="buttons__button" onClick={() => selectColum(1)}>Column 2</button>
     <button className="buttons__button"onClick={() => selectColum(2)}>Column 3</button>
-      <div className="container__cards">
+      <div className="container__cards" >
         {columns.flatMap((element)=> element).map(({value, suit, className}) => {
           return (
-            <Card key={`${value}-${suit}`} value={value} suit={suit} className={className}/>
+            <Card key={`${value}-${suit}`} value={value} suit={suit} className={className} role='deck'/>
           )
         })} 
       </div>
