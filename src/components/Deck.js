@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Card from "./Card";
+import mergeAndDistributeCards from "./deckFunctions"
 
 const VALUES= [ "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 const SUITS = ["♥", "♠", "♦", "♣"];
@@ -22,28 +23,10 @@ const Deck = () => {
     ]
   );
 
-  const mergeAndDistribute = (selectedColumn) => {
-    let cards;
-    if (selectedColumn === 0) {
-      cards = [...columns[2], ...columns[0], ...columns[1]];
-    } else if (selectedColumn === 1) {
-      cards = [...columns[2], ...columns[1], ...columns[0]];
-    } else {
-      cards = [...columns[1], ...columns[2], ...columns[0]];
-    }
-  const result = [[], [], []];
-    cards.forEach((card, index) => {
-      if (index % 3 === 1) result[1].push(card);
-      else if (index % 3 === 2) result[2].push(card);
-      else result[0].push(card);
-    });
-
-    setColumns(result);
-  }
-
   const selectColum = (selectedColumn) => {
     if (step < 3) {
-      mergeAndDistribute(selectedColumn);
+      const result = mergeAndDistributeCards(selectedColumn, columns)
+      setColumns (result);
       setStep(step + 1);
     }
   }
