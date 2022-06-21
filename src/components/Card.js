@@ -1,6 +1,6 @@
 const Card = ({value, suit, className}) => {
   return (
-    <div className ={`card card--${className}`} >{value}{suit}</div>
+    <div className ={`container__card card--${className}`} role='deck'>{value}{suit}</div>
   )
 }
 export default Card;
