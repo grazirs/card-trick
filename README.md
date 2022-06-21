@@ -1,8 +1,8 @@
 # 11th Card Trick
 
 - This project was carried out using create react app.
-- The goal of this project is to build a card trick.
-- 
+- The goal of this project is to build the 11th card trick.
+
 ## How to play
 - Memorize 1 of the 21 cards.
 - Pick which of the 3 piles your card is located in. Repeat this a total of 3 times.
