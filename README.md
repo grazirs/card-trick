@@ -2,10 +2,12 @@
 
 - This project was carried out using create react app.
 - The goal of this project is to build a card trick.
+- 
 ## How to play
-- Click done once you have memorized 1 of the 21 cards.
+- Memorize 1 of the 21 cards.
 - Pick which of the 3 piles your card is located in. Repeat this a total of 3 times.
 - At the end your card will be displayed.
+- Play again clicking on the reset button.
 
 ## Run
 
