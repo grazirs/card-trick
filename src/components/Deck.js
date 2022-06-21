@@ -31,8 +31,7 @@ const Deck = () => {
     } else {
       cards = [...columns[1], ...columns[2], ...columns[0]];
     }
-    
-    const result = [[], [], []];
+  const result = [[], [], []];
     cards.forEach((card, index) => {
       if (index % 3 === 1) result[1].push(card);
       else if (index % 3 === 2) result[2].push(card);
@@ -49,18 +48,30 @@ const Deck = () => {
     }
   }
 
+  const reset = () => {
+    trickDeck = randomizeArray(deck).slice(0, TOTAL_OF_CARDS);
+    setColumns([
+        trickDeck.slice(0, 7),
+        trickDeck.slice(7, 14),
+        trickDeck.slice(14)
+    ]);
+    setStep(0);
+}
+
   return (
   <>
   <div className="container__info">
     <h1>
       {step < 3 ? 'In which column is your card? ' : `Your card is... ${columns[1][3]['value']}${columns[1][3]['suit']}`}
     </h1>
+    {step === 3 && (<button className=" buttons__button buttons__button--reset" onClick={reset}> Play again</button>)}
   </div>
+  
     <div>
     <button className="buttons__button" onClick={() => selectColum(0)}>Column 1</button>
     <button className="buttons__button" onClick={() => selectColum(1)}>Column 2</button>
     <button className="buttons__button"onClick={() => selectColum(2)}>Column 3</button>
-      <div className="container__cards" >
+      <div className="container__cards">
         {columns.flatMap((element)=> element).map(({value, suit, className}) => {
           return (
             <Card key={`${value}-${suit}`} value={value} suit={suit} className={className} role='deck'/>

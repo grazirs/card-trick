@@ -74,6 +74,10 @@
   border: solid 2px var(--white);
 }
 
+.buttons__button--reset{
+  background-color: var(--dark-red);
+}
+
 .title{
   color: var(--white);
   font-family: var(--font-nunito);
@@ -82,11 +86,9 @@
   text-shadow: 2px 3px 2px var(--black);
   font-size: var(--font-40);
 }
-.container__info{
-  display: flex;
+.container__info {
   align-items: center;
-  width: 30%;
-  height: 500px;
+  width: 25%;
   color: var(--white);
   font-family: var(--font-nunito);
   font-size: var(--font-22);
